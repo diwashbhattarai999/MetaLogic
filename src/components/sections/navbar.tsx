@@ -4,17 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Quicksand } from "next/font/google";
 import { AlignRight, X } from "lucide-react";
 
 import { NAV_LINKS } from "@/constants";
 
 import { cn } from "@/lib/utils";
 
-import Container from "@/components/container";
-import Button from "@/components/ui/button";
+import useNavbarAnimation from "@/hooks/useNavbarAnimation";
 
-const quicksand = Quicksand({ subsets: ["latin"], weight: ["700"] });
+import Button from "@/components/ui/button";
+import Container from "@/components/container";
+import HoverButton from "@/components/animations/hover-button";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -23,27 +23,29 @@ const Navbar = () => {
 
   const handleToggleMenu = () => setShowMenu(!showMenu);
 
+  const navbarRef = useNavbarAnimation();
+
   return (
-    <nav className="py-3 bg-background/70 backdrop-blur-md border-b border-border fixed top-0 left-0 w-full">
+    <nav
+      ref={navbarRef}
+      className="py-3 bg-background/70 backdrop-blur-md border-b border-border fixed top-0 left-0 w-full z-50"
+    >
       <Container className="flex items-center justify-between w-full">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Image
-            src={"/images/metalogo.webp"}
-            alt="MetaLogo"
-            width={50}
-            height={50}
-            priority
-          />
-          <h1
-            className={cn(
-              "text-foreground font-bold text-2xl lg:text-4xl tracking-wide",
-              quicksand.className
-            )}
-          >
-            MetaLogic
-          </h1>
-        </div>
+        <Link href={"/"}>
+          <HoverButton>
+            <Image
+              src={"/images/metalogo.webp"}
+              alt="MetaLogo"
+              width={50}
+              height={50}
+              priority
+            />
+            <h1 className="text-foreground/95 font-bold text-2xl lg:text-[2rem] tracking-wider font-noto">
+              MetaLogic
+            </h1>
+          </HoverButton>
+        </Link>
 
         {/* Links */}
         <ul className="hidden md:flex gap-3 lg:gap-8 items-center">
@@ -71,17 +73,26 @@ const Navbar = () => {
           {/* Mobile Nav */}
           <div className="md:hidden relative w-7 h-7">
             {/* Hamburger Icons */}
-            {showMenu ? (
-              <X
-                className="cursor-pointer w-full h-full absolute z-50 inset-0"
-                onClick={handleToggleMenu}
-              />
-            ) : (
-              <AlignRight
-                className="cursor-pointer w-full h-full absolute z-50 inset-0"
-                onClick={handleToggleMenu}
-              />
-            )}
+
+            <X
+              className={cn(
+                "cursor-pointer w-full h-full absolute z-50 inset-0 duration-300",
+                showMenu
+                  ? "rotate-0 opacity-100 pointer-events-auto"
+                  : "rotate-180 opacity-0 pointer-events-none"
+              )}
+              onClick={handleToggleMenu}
+            />
+
+            <AlignRight
+              className={cn(
+                "cursor-pointer w-full h-full absolute z-50 inset-0 duration-300",
+                showMenu
+                  ? "rotate-180 opacity-0 pointer-events-none"
+                  : "rotate-0 opacity-100 pointer-events-auto"
+              )}
+              onClick={handleToggleMenu}
+            />
 
             {/* Hamburger Menu */}
             <div

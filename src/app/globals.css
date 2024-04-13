@@ -41,10 +41,22 @@
 
 @layer utilities {
   .slider {
-    @apply pb-1 after:border-b-[3px] after:block after:content-[''] after:border-button after:scale-x-50 after:origin-[0%_50%];
+    @apply pb-1;
   }
 
-  .hover-slider {
-    @apply after:scale-x-0 after:transition after:duration-500 hover:after:scale-x-50;
+  .slider::after {
+    @apply border-b-[3px] block content-[''] border-button scale-x-50 origin-[0%_50%];
+  }
+
+  .hover-slider::after {
+    @apply scale-x-0 transition duration-500 hover:scale-x-50;
+  }
+
+  .glass-container {
+    @apply relative;
+  }
+
+  .glass-container::before {
+    @apply absolute -inset-[10px] -z-10 rounded-xl border border-foreground/20 bg-foreground/10 backdrop-blur-md content-[''];
   }
 }

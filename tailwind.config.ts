@@ -61,6 +61,11 @@ const config: Config = {
           DEFAULT: "hsl(var(--ring))",
         },
       },
+      fontFamily: {
+        dm: ["var(--font-db_sans)"],
+        pt: ["var(--font-pt_sans)"],
+        noto: ["var(--font-noto_sans)"],
+      },
     },
   },
   plugins: [],

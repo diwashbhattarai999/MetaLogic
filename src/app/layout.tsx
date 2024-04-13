@@ -1,8 +1,40 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import {
+  Bubblegum_Sans,
+  DM_Sans,
+  Exo_2,
+  Noto_Sans,
+  PT_Sans,
+  Pixelify_Sans,
+  Racing_Sans_One,
+  Shantell_Sans,
+} from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const lato = Lato({ subsets: ["latin"], weight: ["300", "400", "700", "900"] });
+const dm_sans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-dm_sans",
+});
+
+const pt_sans = PT_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pt_sans",
+});
+
+// const noto_sans = Noto_Sans({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700", "800", "900"],
+//   variable: "--font-noto_sans",
+// });
+
+const noto_sans = Exo_2({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-noto_sans",
+});
 
 export const metadata: Metadata = {
   title: "MetaLogic Software Pvt. Ltd.",
@@ -17,7 +49,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lato.className}>{children}</body>
+      <body
+        className={cn(
+          "bg-background font-dm",
+          dm_sans.variable,
+          pt_sans.variable,
+          noto_sans.variable
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }

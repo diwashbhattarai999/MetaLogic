@@ -8,7 +8,7 @@ export default function MainLayout({
   return (
     <div className="min-h-screen w-full">
       <Navbar />
-      <main className="py-32 md:py-36">{children}</main>
+      <main className="pt-24">{children}</main>
     </div>
   );
 }
