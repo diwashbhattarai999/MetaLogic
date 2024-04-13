@@ -2,11 +2,13 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// register gsap plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const useNavbarAnimation = () => {
   const navbarRef = useRef<HTMLDivElement | null>(null);
 
+  // Animation for hiding when scrolling down and showing when scrolling up
   useEffect(() => {
     const navbar = navbarRef.current;
     if (!navbar) return;

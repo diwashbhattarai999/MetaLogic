@@ -23,6 +23,7 @@ const Navbar = () => {
 
   const handleToggleMenu = () => setShowMenu(!showMenu);
 
+  // For hiding when scrolling down and showing when scrolling up
   const navbarRef = useNavbarAnimation();
 
   return (
@@ -73,7 +74,7 @@ const Navbar = () => {
           {/* Mobile Nav */}
           <div className="md:hidden relative w-7 h-7">
             {/* Hamburger Icons */}
-
+            {/* Close */}
             <X
               className={cn(
                 "cursor-pointer w-full h-full absolute z-50 inset-0 duration-300",
@@ -84,6 +85,7 @@ const Navbar = () => {
               onClick={handleToggleMenu}
             />
 
+            {/* Menu */}
             <AlignRight
               className={cn(
                 "cursor-pointer w-full h-full absolute z-50 inset-0 duration-300",
