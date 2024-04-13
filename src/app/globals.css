@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+
+  --accent: 217 100% 17%;
+  --accent-foreground: 0 0% 9%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --success: 122 62% 78%;
+  --success-foreground: 120 88% 14%;
+
+  --button: 0 77% 56%;
+  --button-foreground: 0 0% 100%;
+
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --radius: 0.5rem;
+}
+
+@layer utilities {
+  .slider {
+    @apply pb-1 after:border-b-[3px] after:block after:content-[''] after:border-button after:scale-x-50 after:origin-[0%_50%];
+  }
+
+  .hover-slider {
+    @apply after:scale-x-0 after:transition after:duration-500 hover:after:scale-x-50;
+  }
+}

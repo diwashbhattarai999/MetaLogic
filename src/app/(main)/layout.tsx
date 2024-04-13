@@ -1,3 +1,4 @@
+import Navbar from "@/components/sections/navbar";
 
 export default function MainLayout({
   children,
@@ -5,8 +6,9 @@ export default function MainLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      {children}
-    </>
+    <div className="min-h-screen w-full">
+      <Navbar />
+      <main className="py-32 md:py-36">{children}</main>
+    </div>
   );
 }

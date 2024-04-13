@@ -1,4 +1,4 @@
-const NAV_LINKS = [
+export const NAV_LINKS = [
   { title: "Home", link: "/" },
   { title: "Services", link: "/services" },
   { title: "Career", link: "/careers" },
