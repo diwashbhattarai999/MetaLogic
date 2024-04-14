@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AlignRight, X } from "lucide-react";
 
@@ -14,7 +13,7 @@ import useNavbarAnimation from "@/hooks/useNavbarAnimation";
 
 import Button from "@/components/ui/button";
 import Container from "@/components/container";
-import HoverButton from "@/components/animations/hover-button";
+import Logo from "@/components/logo";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -29,25 +28,11 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className="py-3 bg-background/70 backdrop-blur-md border-b border-border fixed top-0 left-0 w-full z-50"
+      className="py-3 bg-background/70 backdrop-blur-md border-b border-border/20 fixed top-0 left-0 w-full z-50"
     >
       <Container className="flex items-center justify-between w-full">
         {/* Logo */}
-        <Link href={"/"}>
-          <HoverButton>
-            <Image
-              src={"/images/metalogo.webp"}
-              alt="MetaLogo"
-              width={50}
-              height={50}
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-            <h1 className="text-foreground/95 font-bold text-xl sm:text-2xl lg:text-[2rem] tracking-wider font-noto">
-              MetaLogic
-            </h1>
-          </HoverButton>
-        </Link>
+        <Logo />
 
         {/* Links */}
         <ul className="hidden md:flex gap-3 lg:gap-8 items-center">

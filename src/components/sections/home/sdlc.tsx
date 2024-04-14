@@ -22,7 +22,7 @@ const SDLC = () => {
         {SDLC_STEPS.map((step, i) => (
           <div
             key={i}
-            className={`row-span-1 bg-accent/95 backdrop-blur-md text-accent-foreground rounded-lg w-full glass-container flex flex-col items-start justify-center px-6 py-16 md:py-4 gap-2 relative ${
+            className={`row-span-1 bg-accent/95 backdrop-blur-md text-accent-foreground rounded-lg w-full glass-container flex flex-col items-start justify-center px-6 py-16 md:py-10 gap-2 relative ${
               i === 1 ? "row-span-2" : ""
             }`}
             data-scroll
@@ -36,8 +36,8 @@ const SDLC = () => {
             <Image
               src={step.image}
               alt=""
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               className={cn(
                 "absolute top-2 right-5",
                 step.rotate && "rotate-45"
@@ -46,8 +46,6 @@ const SDLC = () => {
           </div>
         ))}
       </div>
-
-      <div className="h-screen"></div>
     </section>
   );
 };
