@@ -1,14 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Bubblegum_Sans,
-  DM_Sans,
-  Exo_2,
-  Noto_Sans,
-  PT_Sans,
-  Pixelify_Sans,
-  Racing_Sans_One,
-  Shantell_Sans,
-} from "next/font/google";
+import { DM_Sans, Exo_2, PT_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -24,16 +15,10 @@ const pt_sans = PT_Sans({
   variable: "--font-pt_sans",
 });
 
-// const noto_sans = Noto_Sans({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "600", "700", "800", "900"],
-//   variable: "--font-noto_sans",
-// });
-
-const noto_sans = Exo_2({
+const exo_2 = Exo_2({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-noto_sans",
+  variable: "--font-exo_2",
 });
 
 export const metadata: Metadata = {
@@ -54,7 +39,7 @@ export default function RootLayout({
           "bg-background font-dm",
           dm_sans.variable,
           pt_sans.variable,
-          noto_sans.variable
+          exo_2.variable
         )}
       >
         {children}

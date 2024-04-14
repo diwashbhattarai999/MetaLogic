@@ -64,7 +64,7 @@ const config: Config = {
       fontFamily: {
         dm: ["var(--font-db_sans)"],
         pt: ["var(--font-pt_sans)"],
-        noto: ["var(--font-noto_sans)"],
+        noto: ["var(--font-exo_2)"],
       },
     },
   },

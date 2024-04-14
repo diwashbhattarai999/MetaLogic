@@ -41,8 +41,9 @@ const Navbar = () => {
               width={50}
               height={50}
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            <h1 className="text-foreground/95 font-bold text-2xl lg:text-[2rem] tracking-wider font-noto">
+            <h1 className="text-foreground/95 font-bold text-xl sm:text-2xl lg:text-[2rem] tracking-wider font-noto">
               MetaLogic
             </h1>
           </HoverButton>

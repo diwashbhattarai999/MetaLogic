@@ -1,26 +1,30 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { ArrowRight, CircleCheckBig } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { CustomEase } from "gsap/dist/CustomEase";
+
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+
+import { SDLC_STEPS } from "@/constants";
 
 import Button from "@/components/ui/button";
-
-import { CustomEase } from "gsap/dist/CustomEase";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
-import { PRODUCT_DEVELOPMENT_LIFECYCLE } from "@/constants";
 
 // register gsap plugins
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 // create custome ease
 CustomEase.create("cubic-text", "0.25, 1, 0.5, 1");
 
 const Hero = () => {
   const containerRef = useRef(null);
+  const imageRef = useRef<HTMLDivElement | null>(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   // Animation for header and subheader
@@ -72,15 +76,35 @@ const Hero = () => {
     { scope: containerRef }
   );
 
+  // Animation for image zooming on scroll
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const image = imageRef.current;
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: image,
+          start: "top top",
+          scrub: true,
+        },
+      });
+
+      tl.to(image, {
+        scale: 1.4,
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div
+    <section
       ref={containerRef}
-      className="min-h-screen flex items-center flex-col gap-16 z-10 py-12 md:py-16 lg:py-28"
+      className="min-h-screen flex md:items-center flex-col gap-16 z-10 py-12 md:py-16 lg:py-28"
     >
       <div className="text-center flex flex-col items-center gap-4 text-secondary-foreground/90">
         {/* Header */}
         <div className="title overflow-y-hidden inline-block align-bottom">
-          <span className="inline-block max-w-6xl text-4xl md:text-5xl lg:text-6xl font-bold font-pt translate-y-full will-change-transform">{`Today's Evolution Towards a Digital Future`}</span>
+          <span className="inline-block max-w-6xl text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-pt translate-y-full will-change-transform">{`Today's Evolution Towards a Digital Future`}</span>
         </div>
 
         {/* SubHeader */}
@@ -102,18 +126,18 @@ const Hero = () => {
           </span>
         </div>
 
-        {/* Development steps */}
+        {/* SDLC steps */}
         <div className="title overflow-y-hidden inline-block align-bottom">
           <span className="inline-block translate-y-full will-change-transform">
-            <ul className="flex items-center gap-6 mt-8 -mb-4">
-              {PRODUCT_DEVELOPMENT_LIFECYCLE.map((pdl, index) => {
+            <ul className="flex flex-wrap items-center justify-center gap-6 mt-8 md:-mb-4">
+              {SDLC_STEPS.map((step, index) => {
                 return (
                   <li
                     key={index}
                     className="flex gap-2 items-center text-sm md:text-lg"
                   >
                     <CircleCheckBig className="w-5 h-5 text-success-foreground" />
-                    <h1 className="font-medium">{pdl.title}</h1>
+                    <h1 className="font-medium">{step.title}</h1>
                   </li>
                 );
               })}
@@ -123,7 +147,7 @@ const Hero = () => {
       </div>
 
       {/* Hero Banner */}
-      <div className="hero__image glass-container z-0 opacity-0">
+      <div ref={imageRef} className="hero__image glass-container z-0 opacity-0">
         <div className="hero__glow absolute inset-0 -z-10 bg-button/30 blur-2xl filter opacity-0" />
         <Image
           src={"/images/hero-banner.png"}
@@ -135,7 +159,7 @@ const Hero = () => {
           className="rounded-md"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

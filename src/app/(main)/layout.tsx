@@ -8,7 +8,7 @@ export default function MainLayout({
   return (
     <div className="min-h-screen w-full">
       <Navbar />
-      <main className="pt-24">{children}</main>
+      <main className="pt-24 overflow-hidden">{children}</main>
     </div>
   );
 }
