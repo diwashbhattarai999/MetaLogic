@@ -104,12 +104,12 @@ const Hero = () => {
       <div className="text-center flex flex-col items-center gap-4 text-secondary-foreground/90">
         {/* Header */}
         <div className="title overflow-y-hidden inline-block align-bottom">
-          <span className="inline-block max-w-6xl text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-pt translate-y-full will-change-transform">{`Today's Evolution Towards a Digital Future`}</span>
+          <span className="inline-block max-w-6xl text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-pt translate-y-full will-change-transform py-2">{`Today's Evolution Towards a Digital Future`}</span>
         </div>
 
         {/* SubHeader */}
         <div className="title overflow-y-hidden inline-block align-bottom">
-          <span className="inline-block max-w-2xl lg:max-w-4xl text-sm md:text-lg lg:text-xl font-bold  font-pt translate-y-full will-change-transform">{`Discover how our state-of-the-art software solutions can revolutionize your business and drive success in the ever-evolving digital landscape.`}</span>
+          <span className="inline-block max-w-2xl lg:max-w-4xl text-sm md:text-lg lg:text-xl font-normal sm:font-semibold md:font-bold  font-pt translate-y-full will-change-transform">{`Discover how our state-of-the-art software solutions can revolutionize your business and drive success in the ever-evolving digital landscape.`}</span>
         </div>
 
         {/* CTA */}
