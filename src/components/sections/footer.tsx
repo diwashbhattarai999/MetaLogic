@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 import Container from "@/components/container";
 import Logo from "@/components/logo";
+import { cn } from "@/lib/utils";
 
 const FOOTER_INFOS = [
   {
@@ -44,7 +45,7 @@ const FOOTER_CONTACTS = [
 
 const Footer = () => {
   return (
-    <footer className="mt-8 bg-accent text-background h-screen relative">
+    <footer className="mt-8 bg-accent text-background  min-h-screen md:min-h-full md:h-screen relative">
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full blur-3xl z-0 pointer-events-none"
@@ -61,11 +62,11 @@ const Footer = () => {
         </div>
 
         {/* Top - Links & Socials */}
-        <div className="flex gap-10 items-start pt-12 mb-8">
+        <div className="flex flex-col-reverse md:flex-row gap-10 items-start pt-12 mb-8">
           {/* Left */}
-          <div className="basis-[55%] grid gap-4 grid-cols-1 min-[350px]:grid-cols-2 md:grid-cols-3">
-            {FOOTER_INFOS.map((section, index) => (
-              <ul key={index} className="flex flex-col gap-2">
+          <div className="w-full md:basis-[55%] grid gap-4 sm:gap-2 md:gap-4 grid-cols-1 min-[350px]:grid-cols-2 xl:grid-cols-3">
+            {FOOTER_INFOS.map((section, i) => (
+              <ul key={i} className={cn("flex flex-col gap-2")}>
                 {/* Title */}
                 <h2 className="text-lg md:text-xl font-semibold mb-2 pb-2 pr-4 border-b border-border w-fit">
                   {section.title}
@@ -79,8 +80,8 @@ const Footer = () => {
                     className="flex items-center gap-2 group cursor-pointer"
                   >
                     <div className="group-hover:translate-x-1 duration-300 overflow-hidden flex items-center pt-1">
-                      <ArrowRight className="inline mr-1 w-5 h-5 -translate-x-5 group-hover:translate-x-0 group-hover:-rotate-45" />
-                      <div className="-translate-x-5 group-hover:translate-x-0 text-muted">
+                      <ArrowRight className="hidden md:inline mr-1 w-5 h-5 -translate-x-5 group-hover:translate-x-0 group-hover:-rotate-45" />
+                      <div className="md:-translate-x-5 group-hover:translate-x-0 text-muted">
                         {link.title}
                       </div>
                     </div>
@@ -91,18 +92,18 @@ const Footer = () => {
           </div>
 
           {/* Right */}
-          <div className="basis-[45%] flex flex-col gap-8">
+          <div className="w-full md:basis-[45%] flex flex-col gap-8">
             {/* Subscribe to Newsletter */}
             <div className="w-full">
-              <h1 className="text-6xl font-light mb-4">
+              <h1 className="text-4xl md:text-6xl font-light mb-4">
                 <p>Subscribe to </p>
                 <p>our newsletter</p>
               </h1>
-              <div className="relative w-[80%] text-secondary/80">
+              <div className="relative w-full md:w-[80%] text-secondary/80">
                 <input
                   type="text"
                   placeholder="Your Email"
-                  className="p-5 border border-border bg-muted/30 text-xl backdrop-blur-md rounded-2xl outline-none w-full"
+                  className="p-2 md:p-5 border border-border bg-muted/30 text-xl backdrop-blur-md rounded-2xl outline-none w-full"
                 />
                 <ArrowRight className="absolute top-1/2 right-5 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7" />
               </div>
