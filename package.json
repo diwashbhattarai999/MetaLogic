@@ -1,5 +1,17 @@
 {
   "name": "metalogic",
+  "description": "Discover how Metalogic Software Private Limited, based in Lalitpur, empowers businesses with cutting-edge web and mobile app solutions. From innovative technologies to personalized development, partner with us for excellence in software tailored to your unique needs.",
+  "author": "Diwash Bhattarai <diwashb999@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/diwashbhattarai999/MetaLogic"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "gsap",
+    "metalogic"
+  ],
   "version": "0.1.0",
   "private": true,
   "scripts": {

@@ -45,7 +45,7 @@ const FOOTER_CONTACTS = [
 
 const Footer = () => {
   return (
-    <footer className="mt-8 bg-accent text-background  min-h-screen md:min-h-full md:h-screen relative">
+    <footer className="mt-8 bg-accent text-background min-h-screen lg:min-h-full lg:h-screen relative">
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full blur-3xl z-0 pointer-events-none"
@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="w-full md:basis-[45%] flex flex-col gap-8">
             {/* Subscribe to Newsletter */}
             <div className="w-full">
-              <h1 className="text-4xl md:text-6xl font-light mb-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-4">
                 <p>Subscribe to </p>
                 <p>our newsletter</p>
               </h1>

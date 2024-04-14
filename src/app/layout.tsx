@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { DM_Sans, Exo_2, PT_Sans } from "next/font/google";
-import "./globals.css";
+
 import { cn } from "@/lib/utils";
+
+import { siteConfig } from "@/configs";
+
+import "./globals.css";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -21,11 +25,7 @@ const exo_2 = Exo_2({
   variable: "--font-exo_2",
 });
 
-export const metadata: Metadata = {
-  title: "MetaLogic Software Pvt. Ltd.",
-  description:
-    "Discover how Metalogic Software Private Limited, based in Lalitpur, empowers businesses with cutting-edge web and mobile app solutions. From innovative technologies to personalized development, partner with us for excellence in software tailored to your unique needs.",
-};
+export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({
   children,
