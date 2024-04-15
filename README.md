@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Metalogic Website Redesign
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project aims to redesign the homepage of the Metalogic website using modern web development technologies. The redesign focuses on improving visual aesthetics, user interface, and implementing interactive elements to enhance user experience.
+
+
+![Metalogic-Home](https://github.com/diwashbhattarai999/MetaLogic/assets/87477700/14732c32-083c-46ed-8455-0a8cf96a79af)
+
+## Technologies Used
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- GSAP
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/diwashbhattarai999/Gov-Certify.git
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Start the server:
 
-## Learn More
+```bash
+# if running development server
+pnpm dev
 
-To learn more about Next.js, take a look at the following resources:
+# if running production server
+pnpm build
+pnpm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open your browser and navigate to http://localhost:3000 to view the redesigned homepage.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Design Decisions
 
-## Deploy on Vercel
+- Next.js was chosen for its server-side rendering capabilities and efficient routing system.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- TypeScript was used to enhance code readability, maintainability, and type safety.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- GSAP was utilized for animations to create smooth transitions and interactive elements.
+
+- Tailwind CSS provided a utility-first approach to styling, allowing for rapid development and customization.
+
+- Locomotive scroll was used for smooth scrolling experience
+
+## Features Implemented
+
+- **Responsive design** ensures compatibility across various devices and screen sizes.
+
+- **Interactive elements** such as smooth scrolling and scroll-triggered effects enhance user engagement.
+
+- **SEO optimizations** includes Next.js's *automatic server-side rendering*, built-in *metatags management*, *manifest*, *progressive webapp* and *image optimization* capabilities all work together to enhance your site's visibility and ranking in search results.
+
+
+## Project Structure
+
+The project follows a modular architecture with clear separation of concerns. Below is an overview of the directory structure:
+
+```
+
+public/
+├── images/
+└── ... 
+src/
+├── components/
+│   ├── animation/  // Folder for reusable animation components
+│   ├── sections/  // Folder for reusable page sections
+│   │   └── ...  // Section components (e.g., HeroSection.tsx, AboutSection.tsx)
+│   └── ui/        // Folder for reusable UI components
+|       ├── button.tsx
+│       ├── container.tsx
+│       └── logo.tsx
+├── configs/
+│   └── index.ts    // Configuration file for metadata
+├── constants/
+│   └── index.ts    // Constant definitions (e.g., NAV_LINKS)
+├── hooks/
+│   ├── useNavbarAnimation.ts  // Custom hook for navbar animation
+|   └── ...
+├── lib/
+│   └── utils.ts     // Utility functions
+├── manifest.ts    // Optional: Manifest configuration for service workers
+└── ...            
+
+```
+## Challenges Faced
+
+- Integrating GSAP animations with the Next.js app router presented a significant challenge due to the need for *careful synchronization* to ensure *smooth rendering* and *performance optimization*
+- While I was somewhat familiar with Framer Motion for animations, *I decided to explore GSAP for this project*, even though I had no prior experience with it.
+- *Learning to use GSAP effectively required additional time and effort, as it introduced new concepts and syntax compared to Framer Motion.*
+- Despite the initial learning curve, *I embraced the opportunity to expand my skill set and successfully implemented dynamic animations throughout the application.*
+
+
+## Future Improvements
+
+- Implement server-side rendering for dynamic content to further optimize page load times.
+- Enhance SEO strategies through continuous monitoring and refinement to improve search engine visibility and ranking.
+- Explore additional interactive features and animations to further engage users and create memorable experiences.
+
+## Conclusion
+
+The Metalogic website redesign project showcases the capabilities of modern web development technologies in creating compelling and functional designs. By leveraging Next.js, TypeScript, GSAP, and Tailwind CSS, the redesigned homepage delivers an immersive user experience while maintaining compatibility and performance across various devices and platforms.
+
+## Author
+
+[Diwash Bhattarai](https://github.com/author)
