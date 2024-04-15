@@ -4,6 +4,9 @@
 
 This project aims to redesign the homepage of the Metalogic website using modern web development technologies. The redesign focuses on improving visual aesthetics, user interface, and implementing interactive elements to enhance user experience.
 
+
+![Metalogic-Home](https://github.com/diwashbhattarai999/MetaLogic/assets/87477700/14732c32-083c-46ed-8455-0a8cf96a79af)
+
 ## Technologies Used
 
 - Next.js
@@ -57,7 +60,8 @@ pnpm start
 
 - **Interactive elements** such as smooth scrolling and scroll-triggered effects enhance user engagement.
 
-- **SEO optimizations** includes Next.js's _automatic server-side rendering_, built-in _metatags management_, _manifest_, _progressive webapp_ and _image optimization_ capabilities all work together to enhance your site's visibility and ranking in search results.
+- **SEO optimizations** includes Next.js's *automatic server-side rendering*, built-in *metatags management*, *manifest*, *progressive webapp* and *image optimization* capabilities all work together to enhance your site's visibility and ranking in search results.
+
 
 ## Project Structure
 
@@ -67,7 +71,7 @@ The project follows a modular architecture with clear separation of concerns. Be
 
 public/
 ├── images/
-└── ...
+└── ... 
 src/
 ├── components/
 │   ├── animation/  // Folder for reusable animation components
@@ -87,16 +91,16 @@ src/
 ├── lib/
 │   └── utils.ts     // Utility functions
 ├── manifest.ts    // Optional: Manifest configuration for service workers
-└── ...
+└── ...            
 
 ```
-
 ## Challenges Faced
 
-- Integrating GSAP animations with the Next.js app router presented a significant challenge due to the need for _careful synchronization_ to ensure _smooth rendering_ and _performance optimization_
-- While I was somewhat familiar with Framer Motion for animations, _I decided to explore GSAP for this project_, even though I had no prior experience with it.
-- _Learning to use GSAP effectively required additional time and effort, as it introduced new concepts and syntax compared to Framer Motion._
-- Despite the initial learning curve, _I embraced the opportunity to expand my skill set and successfully implemented dynamic animations throughout the application._
+- Integrating GSAP animations with the Next.js app router presented a significant challenge due to the need for *careful synchronization* to ensure *smooth rendering* and *performance optimization*
+- While I was somewhat familiar with Framer Motion for animations, *I decided to explore GSAP for this project*, even though I had no prior experience with it.
+- *Learning to use GSAP effectively required additional time and effort, as it introduced new concepts and syntax compared to Framer Motion.*
+- Despite the initial learning curve, *I embraced the opportunity to expand my skill set and successfully implemented dynamic animations throughout the application.*
+
 
 ## Future Improvements
 
@@ -111,7 +115,3 @@ The Metalogic website redesign project showcases the capabilities of modern web 
 ## Author
 
 [Diwash Bhattarai](https://github.com/author)
-
-## Images
-
-![Metalogic Image]()
