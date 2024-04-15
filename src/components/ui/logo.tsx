@@ -1,7 +1,9 @@
 import Link from "next/link";
-import HoverButton from "./animations/hover-button";
 import Image from "next/image";
+
 import { cn } from "@/lib/utils";
+
+import HoverButton from "@/components/animations/hover-button";
 
 interface ILogoProps {
   color?: string;

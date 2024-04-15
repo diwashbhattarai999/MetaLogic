@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 
-import Hero from "./hero";
-import SDLC from "./sdlc";
+import Hero from "@/components/sections/home/hero";
+import SDLC from "@/components/sections/home/sdlc";
 
 const Home = () => {
   useEffect(() => {

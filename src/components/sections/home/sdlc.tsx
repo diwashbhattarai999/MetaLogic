@@ -1,6 +1,8 @@
-import { SDLC_STEPS } from "@/constants";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
+
+import { cn } from "@/lib/utils";
+
+import { SDLC_STEPS } from "@/constants";
 
 const SDLC = () => {
   return (

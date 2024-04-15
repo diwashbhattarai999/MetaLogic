@@ -12,8 +12,8 @@ import { cn } from "@/lib/utils";
 import useNavbarAnimation from "@/hooks/useNavbarAnimation";
 
 import Button from "@/components/ui/button";
-import Container from "@/components/container";
-import Logo from "@/components/logo";
+import Container from "@/components/ui/container";
+import Logo from "@/components/ui/logo";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);

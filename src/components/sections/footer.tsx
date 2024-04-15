@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
-import Container from "@/components/container";
-import Logo from "@/components/logo";
 import { cn } from "@/lib/utils";
+
+import Container from "@/components/ui/container";
+import Logo from "@/components/ui/logo";
 
 const FOOTER_INFOS = [
   {

@@ -1,4 +1,4 @@
-import Container from "@/components/container";
+import Container from "@/components/ui/container";
 import Home from "@/components/sections/home/home";
 
 export default function HomePage() {
