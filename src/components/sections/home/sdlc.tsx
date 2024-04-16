@@ -14,7 +14,7 @@ const SDLC = () => {
       <div
         className="text-center flex flex-col items-center gap-4 text-secondary-foreground/90 -z-10"
         data-scroll
-        data-scroll-speed="0.2"
+        data-scroll-speed="0.15"
       >
         <span className="inline-block max-w-6xl text-3xl md:text-4xl lg:text-5xl font-bold font-pt">{`From Vision to Reality: Designing, Building, and Scaling Together`}</span>
       </div>
@@ -24,17 +24,22 @@ const SDLC = () => {
         {SDLC_STEPS.map((step, i) => (
           <div
             key={i}
-            className={`row-span-1 bg-accent/95 backdrop-blur-md text-accent-foreground rounded-lg w-full glass-container flex flex-col items-start justify-center px-6 py-16 md:py-10 gap-2 relative ${
+            className={`row-span-1 backdrop-blur-md text-primary rounded-lg w-full bg-secondary/50 border border-border/50 flex flex-col items-start justify-center px-6 py-16 md:py-10 gap-2 relative ${
               i === 1 ? "row-span-2" : ""
             }`}
             data-scroll
-            data-scroll-speed={`${i / 30}`}
-            data-scroll-delay={`${i / 100}`}
+            data-scroll-speed="0.15"
           >
-            <div className="hero__glow absolute inset-0 -z-10 bg-button/10 blur-2xl filter" />
+            {/* Background glow */}
+            <div
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] rounded-full blur-3xl z-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(800px, rgba(232, 65, 65, 0.1), transparent 30%)",
+              }}
+            />
             <h1 className="font-semibold text-3xl">{step.title}</h1>
             <p>{step.description}</p>
-
             <Image
               src={step.image}
               alt=""

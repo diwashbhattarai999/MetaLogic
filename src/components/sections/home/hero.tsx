@@ -89,7 +89,7 @@ const Hero = () => {
       });
 
       tl.to(image, {
-        scale: 1.4,
+        scale: 1.3,
       });
     });
 

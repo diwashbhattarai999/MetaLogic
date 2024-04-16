@@ -43,3 +43,21 @@ export const SDLC_STEPS = [
     rotate: false,
   },
 ];
+
+export const WHY_METALOGIC = [
+  {
+    title: "Innovation at the Core",
+    description:
+      "Let's brainstorm together and explore creative ideas to solve unique challenges. We'll dive deep into your goals and vision, generating innovative concepts that lay the foundation for your project's success.",
+  },
+  {
+    title: "Collaboration is the key",
+    description:
+      "We work closely with you to understand your goals, challenges, and aspirations, ensuring our solutions align perfectly with your business objectives.",
+  },
+  {
+    title: "Your Success, Our Purpose",
+    description:
+      "Our solutions are designed to enhance efficiency, boost productivity, and drive ROI, giving you a competitive edge in your industry.",
+  },
+];
