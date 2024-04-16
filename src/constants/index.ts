@@ -61,3 +61,37 @@ export const WHY_METALOGIC = [
       "Our solutions are designed to enhance efficiency, boost productivity, and drive ROI, giving you a competitive edge in your industry.",
   },
 ];
+
+export const OUR_PRODUCTS = [
+  {
+    title: "Banshwali",
+    subtitle: "View full Banshawali chart digitally.",
+    descriptions: [
+      "View your Banshaj information all in one place.",
+      "Bring all generations together under one roof creates a unique opportunity for shared experiences, mutual learning, and the strengthening of family bonds.",
+      "Manage and learn about events nearby you.",
+    ],
+    images: [
+      "/images/chart.svg",
+      "/images/contribution.svg",
+      "/images/idcard.svg",
+    ],
+  },
+  {
+    title: "Digital Khata",
+    subtitle: "Powerful Point Of Sale system",
+    descriptions: [
+      "Efficient personal finance management",
+      "Accurate interest calculator for loans, savings, or investments.",
+      "Streamlined record-keeping with user-friendly interfaces and reporting features.",
+      "Timely reminders and alerts",
+      "Robust data security and many more",
+    ],
+
+    images: [
+      "/images/dashboard.svg",
+      "/images/cashout.svg",
+      "/images/task.svg",
+    ],
+  },
+];

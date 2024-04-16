@@ -60,3 +60,14 @@
     @apply absolute -inset-[10px] -z-10 rounded-xl border border-foreground/20 bg-foreground/10 backdrop-blur-md content-[''];
   }
 }
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: hsl(var(--secondary)); /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted));
+}

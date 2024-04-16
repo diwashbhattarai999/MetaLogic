@@ -6,10 +6,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import Container from "@/components/ui/container";
 import Hero from "@/components/sections/home/hero";
 import SDLC from "@/components/sections/home/sdlc";
-import WhyMetalogic from "./why-metalogic";
-import Container from "@/components/ui/container";
+import WhyMetalogic from "@/components/sections/home/why-metalogic";
+import ExploreOurProducts from "@/components/sections/home//explore-our-products";
 
 const Home = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -24,19 +25,16 @@ const Home = () => {
   return (
     <>
       <Container className="h-full w-full">
-        {/* Hero Section */}
         <Hero />
-
-        {/* SDLC Section */}
         <SDLC />
       </Container>
 
-      {/* Why Metalogic Section */}
       <WhyMetalogic />
-
       <Container>
-        <div className="min-h-screen"></div>
+        <ExploreOurProducts />
       </Container>
+
+      <div className="min-h-screen"></div>
     </>
   );
 };
