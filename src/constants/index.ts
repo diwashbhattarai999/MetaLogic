@@ -95,3 +95,36 @@ export const OUR_PRODUCTS = [
     ],
   },
 ];
+
+export const OUR_SERVICES = [
+  {
+    title: "Mobile Development",
+    description:
+      "Explore how our tailored solutions drive operational efficiency and leverage data insights for your business in the digital age.",
+    image: "/images/mobile-app.svg",
+  },
+  {
+    title: "Internship / Training",
+    description:
+      "Explore our comprehensive training programs and workshops, spanning software utilization to design principles, elevating your team's skills and productivity.",
+    image: "/images/internship.svg",
+  },
+  {
+    title: "Brand & Marketing",
+    description:
+      "Discover how our branding strategies, logos, and visuals create a lasting impact, resonating effectively with your target audience.",
+    image: "/images/brand-marketing.svg",
+  },
+  {
+    title: "Web Development",
+    description:
+      "Witness the synergy of our creative designers and skilled developers, crafting stunning websites that captivate visitors and foster customer loyalty.",
+    image: "/images/web-app.svg",
+  },
+  {
+    title: "UI/UX",
+    description:
+      "Discover how we design interfaces that blend visual appeal with intuitiveness, driving conversions and enhancing user experience seamlessly.",
+    image: "/images/ui-ux.svg",
+  },
+];

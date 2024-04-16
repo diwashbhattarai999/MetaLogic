@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className="py-3 bg-background/70 backdrop-blur-md border-b border-border/20 fixed top-0 left-0 w-full z-50"
+      className="py-3 bg-background/10 backdrop-blur-md border-b border-border/20 fixed top-0 left-0 w-full z-50"
     >
       <Container className="flex items-center justify-between w-full">
         {/* Logo */}

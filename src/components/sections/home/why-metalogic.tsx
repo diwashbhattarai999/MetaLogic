@@ -59,9 +59,7 @@ const WhyMetalogic = () => {
                       i === 1 && "row-span-2 gap-8"
                     )}
                   >
-                    <h3 className="text-xl font-semibold border-b-4 border-button/90 w-fit">
-                      {w.title}
-                    </h3>
+                    <h3 className="text-xl font-semibold">{w.title}</h3>
                     <p className="text-muted">{w.description}</p>
                   </div>
                 );
