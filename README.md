@@ -4,8 +4,7 @@
 
 This project aims to redesign the homepage of the Metalogic website using modern web development technologies. The redesign focuses on improving visual aesthetics, user interface, and implementing interactive elements to enhance user experience.
 
-
-![Metalogic-Home](https://github.com/diwashbhattarai999/MetaLogic/assets/87477700/14732c32-083c-46ed-8455-0a8cf96a79af)
+![Metalogic-Home](https://github.com/diwashbhattarai999/MetaLogic/assets/87477700/b5e73137-d70d-404e-b9b0-e584c4ab3c48)
 
 ## Technologies Used
 
