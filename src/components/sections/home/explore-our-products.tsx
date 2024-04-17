@@ -92,22 +92,22 @@ const ExploreOurProducts = () => {
             <div className="w-full md:basis-[45%] h-full relative">
               {product.images.map((image, index) => {
                 return (
-                  <div key={index}>
+                  <div
+                    key={index}
+                    className={cn(
+                      "absolute inset-0 md:h-1/2 w-1/2",
+                      index == 0 && "!top-0 !left-0",
+                      index == 1 && "!top-0 !left-1/2",
+                      index == 2 && "!top-16 md:!top-32 !left-1/4 h-full"
+                    )}
+                  >
                     <div className="hero__glow absolute inset-0 -z-10 bg-button/5 blur-2xl filter h-1/2 rounded-full" />
 
                     <Image
                       src={image}
                       alt="Chart"
-                      width={200}
-                      height={200}
+                      fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className={cn(
-                        "absolute",
-                        index == 0 && "top-0 left-0",
-                        index == 1 && "top-0 right-0",
-                        index == 2 &&
-                          "-bottom-40 md:bottom-60 lg:bottom-40 left-1/3 md:left-1/2"
-                      )}
                       data-scroll
                       data-scroll-speed={index / 15}
                     />

@@ -19,7 +19,7 @@ const SDLC = () => {
   useGSAP(
     () => {
       const screenWidth = window.innerWidth;
-      const translateX = screenWidth <= 768 ? `-410vw` : `-245vw`;
+      const translateX = screenWidth <= 768 ? `-410vw` : `-150vw`;
 
       gsap.fromTo(
         stepsRef.current,
@@ -68,7 +68,7 @@ const SDLC = () => {
         {SDLC_STEPS.map((step, i) => (
           <div
             key={i}
-            className="h-[24rem] md:h-[32rem] w-[100vw] md:w-[50vw] backdrop-blur-md text-primary rounded-lg bg-background border border-border/50 flex flex-col items-start justify-center px-6 py-16 md:py-10 gap-2 relative shadow-sm"
+            className="h-[24rem] w-[100vw] md:w-[50vw] backdrop-blur-md text-primary rounded-lg bg-background border border-border/50 flex flex-col items-start justify-center px-6 py-16 md:py-10 gap-2 relative shadow-sm"
           >
             {/* Background glow */}
             <div
@@ -82,11 +82,11 @@ const SDLC = () => {
             <p>{step.description}</p>
             <Image
               src={step.image}
-              alt=""
-              width={50}
-              height={50}
+              alt={step.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className={cn(
-                "absolute top-2 right-5",
+                "!left-auto !top-2 !right-5 !w-14 !h-14",
                 step.rotate && "rotate-45"
               )}
             />

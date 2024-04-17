@@ -22,6 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const [showInfo, setShowInfo] = useState(false);
+
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const Home = () => {
     })();
   }, []);
 
+  // Animation for info
   useGSAP(() => {
     if (prefersReducedMotion) {
       gsap.set(".info", { opacity: 1 });
@@ -86,7 +88,8 @@ const Home = () => {
       <div
         onMouseEnter={() => setShowInfo(true)}
         onMouseLeave={() => setShowInfo(false)}
-        className="info opacity-0 fixed top-28 right-10 p-1 bg-white rounded-full border border-border/30 shadow-lg cursor-pointer z-[60]"
+        onClick={() => setShowInfo(!showInfo)}
+        className="info opacity-0 fixed top-24 md:top-28 right-2 md:right-10 p-1 bg-white rounded-full border border-border/30 shadow-lg cursor-pointer z-[60]"
       >
         <Info className="w-7 h-7 text-muted-foreground" />
       </div>
@@ -101,12 +104,12 @@ const Home = () => {
       >
         <div className="fixed inset-0 bg-black/10 backdrop-blur-md h-screen w-screen z-50">
           <div
-            className="bg-white border border-border/30 w-5 h-5 rotate-45 fixed top-[9.5rem] right-[3.2rem] rounded-sm"
+            className="bg-white border border-border/30 w-5 h-5 rotate-45 fixed top-36 md:top-[9.5rem] right-4 md:right-[3.2rem] rounded-sm"
             onMouseEnter={() => setShowInfo(true)}
             onMouseLeave={() => setShowInfo(false)}
           />
           <div
-            className="fixed top-[9.8rem] right-10 flex flex-col items-center gap-3 bg-white border border-border/50 rounded-lg p-6 shadow-lg max-w-4xl md:text-lg font-pt tracking-wide text-primary/90"
+            className="fixed top-[9.2rem] md:top-[9.8rem] mx-2 right-0 md:right-10 flex flex-col items-center gap-3 bg-white border border-border/50 rounded-lg p-6 shadow-lg max-w-4xl md:text-lg font-pt tracking-wide text-primary/90 overflow-y-scroll md:overflow-y-auto max-h-[60vh] z-50"
             onMouseEnter={() => setShowInfo(true)}
             onMouseLeave={() => setShowInfo(false)}
           >
