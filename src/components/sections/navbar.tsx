@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AlignRight, X } from "lucide-react";
+import gsap from "gsap";
 
 import { NAV_LINKS } from "@/constants";
 
@@ -14,21 +15,38 @@ import useNavbarAnimation from "@/hooks/useNavbarAnimation";
 import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
 import Logo from "@/components/ui/logo";
+import { useGSAP } from "@gsap/react";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-
   const pathname = usePathname();
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const handleToggleMenu = () => setShowMenu(!showMenu);
 
   // For hiding when scrolling down and showing when scrolling up
   const navbarRef = useNavbarAnimation();
 
+  useGSAP(() => {
+    if (prefersReducedMotion) {
+      gsap.set(".navbar", { opacity: 1 });
+      return;
+    }
+
+    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+
+    tl.fromTo(
+      ".navbar",
+      { y: -100 },
+      { y: 0, opacity: 1, duration: 1, delay: -0.5 }
+    );
+  });
+
   return (
     <nav
       ref={navbarRef}
-      className="py-3 bg-background/10 backdrop-blur-md border-b border-border/20 fixed top-0 left-0 w-full z-50"
+      className="navbar py-3 bg-background/10 backdrop-blur-md border-b border-border/20 fixed top-0 left-0 w-full z-50 opacity-0"
     >
       <Container className="flex items-center justify-between w-full">
         {/* Logo */}

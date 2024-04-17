@@ -1,24 +1,28 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { Info } from "lucide-react";
 
-gsap.registerPlugin(ScrollTrigger);
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
+import { cn } from "@/lib/utils";
+
+import Button from "@/components/ui/button";
 import Container from "@/components/ui/container";
 import Hero from "@/components/sections/home/hero";
 import SDLC from "@/components/sections/home/sdlc";
+import OurServices from "@/components/sections/home/our-services";
 import WhyMetalogic from "@/components/sections/home/why-metalogic";
 import ExploreOurProducts from "@/components/sections/home/explore-our-products";
-import OurServices from "@/components/sections/home/our-services";
-import Button from "@/components/ui/button";
-import { Info } from "lucide-react";
-import { cn } from "@/lib/utils";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const [showInfo, setShowInfo] = useState(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     (async () => {
@@ -26,6 +30,21 @@ const Home = () => {
       const locomotiveScroll = new LocomotiveScroll();
     })();
   }, []);
+
+  useGSAP(() => {
+    if (prefersReducedMotion) {
+      gsap.set(".info", { opacity: 1 });
+      return;
+    }
+
+    const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+
+    tl.fromTo(
+      ".info",
+      { y: 50 },
+      { y: 0, opacity: 1, duration: 1, delay: -0.5 }
+    );
+  });
 
   return (
     <>
@@ -38,6 +57,7 @@ const Home = () => {
         <ExploreOurProducts />
       </Container>
       <OurServices />
+
       {/* Contact us section */}
       <div className="min-h-[60vh] py-10 flex items-center justify-center flex-col gap-8 relative">
         <div
@@ -61,15 +81,16 @@ const Home = () => {
           }}
         />
       </div>
+
       {/* i for brief explanation of why I chose to recreate Home Page */}
       <div
         onMouseEnter={() => setShowInfo(true)}
         onMouseLeave={() => setShowInfo(false)}
-        className="fixed top-28 right-10 p-1 bg-white rounded-full border border-border/30 shadow-lg cursor-pointer"
+        className="info opacity-0 fixed top-28 right-10 p-1 bg-white rounded-full border border-border/30 shadow-lg cursor-pointer z-50"
       >
         <Info className="text-blue-500 w-7 h-7" />
       </div>
-      1
+
       <div
         className={cn(
           "duration-300",
