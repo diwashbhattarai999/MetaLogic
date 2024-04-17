@@ -16,7 +16,7 @@ export default function MainLayout({
       <Footer />
 
       <Toaster position="bottom-right" />
-      <NextTopLoader color="#e53838" />
+      <NextTopLoader color="#e53838" showSpinner={false} />
     </div>
   );
 }

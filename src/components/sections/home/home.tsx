@@ -100,10 +100,47 @@ const Home = () => {
         )}
       >
         <div className="fixed inset-0 bg-black/10 backdrop-blur-md h-screen w-screen z-50">
-          <div className="bg-white border border-border/30 w-5 h-5 rotate-45 fixed top-[10.5rem] right-12 rounded-sm" />
-          <span className="fixed top-[10.7rem] right-10 flex items-center gap-2 bg-white border border-border/50 rounded-lg p-6 shadow-lg max-w-3xl md:text-lg font-pt">
-            {`I recreated the Home Page to make it visually appealing and user-friendly. I used GSAP for animations, Locomotive Scroll for smooth scrolling, and other techniques to improve the user experience. This redesigned page incorporates GSAP animations and Locomotive Scroll, providing an immersive and captivating experience. With these tools, I enhanced the interface, creating smooth animations and transitions that engage visitors. These improvements not only enhance the aesthetics but also make browsing more intuitive and enjoyable, showing our commitment to innovation and excellence.`}
-          </span>
+          <div
+            className="bg-white border border-border/30 w-5 h-5 rotate-45 fixed top-[9.5rem] right-[3.2rem] rounded-sm"
+            onMouseEnter={() => setShowInfo(true)}
+            onMouseLeave={() => setShowInfo(false)}
+          />
+          <div
+            className="fixed top-[9.8rem] right-10 flex flex-col items-center gap-3 bg-white border border-border/50 rounded-lg p-6 shadow-lg max-w-4xl md:text-lg font-pt tracking-wide text-primary/90"
+            onMouseEnter={() => setShowInfo(true)}
+            onMouseLeave={() => setShowInfo(false)}
+          >
+            <span>
+              I chose to redesign the <b>Home Page</b> to enhance its visual
+              appeal and user-friendliness. As the initial point of contact for
+              most users, the homepage holds significant importance in
+              establishing trust and engagement. By creating an eye-catching
+              design, I want to grab
+              {` visitors'`}attention and leave a strong impression, setting the
+              tone for their time on our platform.
+            </span>
+
+            <span>
+              This redesigned page incorporates <b>GSAP animations</b> and{" "}
+              <b>Locomotive Scroll</b>, providing an immersive and captivating
+              experience. With these tools, I enhanced the interface, creating
+              smooth animations and transitions that engage visitors. These
+              improvements not only enhance the aesthetics but also make
+              browsing more intuitive and enjoyable, showing our commitment to
+              innovation and excellence.
+            </span>
+
+            <span>
+              I utilized additional tools to enhance various aspects of the
+              website. For smoother page transitions, I integrated{" "}
+              <b>nextjs-top-loader</b>, ensuring a seamless user experience. For
+              notifying users, I incorporated{" "}
+              <b>Sonner for toast notifications</b>, enhancing interactivity.
+              Additionally, I leveraged <b>Tailwind</b> for efficient styling,
+              ensuring a visually appealing and consistent design across the
+              site.
+            </span>
+          </div>
         </div>
       </div>
     </>
