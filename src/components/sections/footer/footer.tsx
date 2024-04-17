@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 import Container from "@/components/ui/container";
 import Logo from "@/components/ui/logo";
+import FooterInput from "./footer-input";
 
 const FOOTER_INFOS = [
   {
@@ -100,14 +101,7 @@ const Footer = () => {
                 <p>Subscribe to </p>
                 <p>our newsletter</p>
               </h1>
-              <div className="relative w-full md:w-[80%] text-secondary/80">
-                <input
-                  type="text"
-                  placeholder="Your Email"
-                  className="p-2 md:p-5 border border-border bg-muted/30 text-xl backdrop-blur-md rounded-2xl outline-none w-full"
-                />
-                <ArrowRight className="absolute top-1/2 right-5 transform -translate-x-1/2 -translate-y-1/2 w-7 h-7" />
-              </div>
+              <FooterInput />
             </div>
 
             {/* Contact links */}

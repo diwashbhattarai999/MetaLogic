@@ -1,4 +1,7 @@
-import Footer from "@/components/sections/footer";
+import NextTopLoader from "nextjs-toploader";
+import { Toaster } from "sonner";
+
+import Footer from "@/components/sections/footer/footer";
 import Navbar from "@/components/sections/navbar";
 
 export default function MainLayout({
@@ -11,6 +14,9 @@ export default function MainLayout({
       <Navbar />
       <main className="pt-24 overflow-hidden">{children}</main>
       <Footer />
+
+      <Toaster position="bottom-right" />
+      <NextTopLoader color="#e53838" />
     </div>
   );
 }

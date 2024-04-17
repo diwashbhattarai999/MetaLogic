@@ -86,23 +86,25 @@ const Home = () => {
       <div
         onMouseEnter={() => setShowInfo(true)}
         onMouseLeave={() => setShowInfo(false)}
-        className="info opacity-0 fixed top-28 right-10 p-1 bg-white rounded-full border border-border/30 shadow-lg cursor-pointer z-50"
+        className="info opacity-0 fixed top-28 right-10 p-1 bg-white rounded-full border border-border/30 shadow-lg cursor-pointer z-[60]"
       >
-        <Info className="text-blue-500 w-7 h-7" />
+        <Info className="w-7 h-7 text-muted-foreground" />
       </div>
 
       <div
         className={cn(
-          "duration-300",
+          "transition",
           showInfo
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         )}
       >
-        <div className="bg-white border border-border/30 w-5 h-5 rotate-45 fixed top-[10.5rem] right-12 rounded-sm duration-300" />
-        <span className="fixed top-[10.7rem] right-10 flex items-center gap-2 bg-white border border-border/50 rounded-lg p-4 shadow-lg max-w-xl md:text-lg  font-pt">
-          {`I recreated the Home Page to make it visually appealing and user-friendly. I used GSAP for animations, Locomotive Scroll for smooth scrolling, and other techniques to improve the user experience. This redesigned page incorporates GSAP animations and Locomotive Scroll, providing an immersive and captivating experience. With these tools, I enhanced the interface, creating smooth animations and transitions that engage visitors. These improvements not only enhance the aesthetics but also make browsing more intuitive and enjoyable, showing our commitment to innovation and excellence.`}
-        </span>
+        <div className="fixed inset-0 bg-black/10 backdrop-blur-md h-screen w-screen z-50">
+          <div className="bg-white border border-border/30 w-5 h-5 rotate-45 fixed top-[10.5rem] right-12 rounded-sm" />
+          <span className="fixed top-[10.7rem] right-10 flex items-center gap-2 bg-white border border-border/50 rounded-lg p-6 shadow-lg max-w-3xl md:text-lg font-pt">
+            {`I recreated the Home Page to make it visually appealing and user-friendly. I used GSAP for animations, Locomotive Scroll for smooth scrolling, and other techniques to improve the user experience. This redesigned page incorporates GSAP animations and Locomotive Scroll, providing an immersive and captivating experience. With these tools, I enhanced the interface, creating smooth animations and transitions that engage visitors. These improvements not only enhance the aesthetics but also make browsing more intuitive and enjoyable, showing our commitment to innovation and excellence.`}
+          </span>
+        </div>
       </div>
     </>
   );
