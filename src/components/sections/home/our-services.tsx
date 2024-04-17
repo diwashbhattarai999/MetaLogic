@@ -31,7 +31,7 @@ const OurServices = () => {
         </div>
 
         {/* Content */}
-        <div className="border border-muted rounded-lg bg-background/10 backdrop-blur-md shadow-sm p-20 max-w-7xl">
+        <div className="md:border border-muted rounded-lg md:bg-background/10 backdrop-blur-md shadow-sm p-0 md:p-20 max-w-7xl">
           <div className="max-w-4xl grid grid-cols-1 lg:grid-cols-2 row-span-4 gap-4">
             {OUR_SERVICES.map((service, i) => {
               return (

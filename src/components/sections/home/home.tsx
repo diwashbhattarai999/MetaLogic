@@ -65,12 +65,12 @@ const Home = () => {
           data-scroll
           data-scroll-speed="0.05"
         >
-          <span className="inline-block max-w-6xl text-3xl md:text-4xl lg:text-5xl font-bold font-pt">{`Are you ready to grow your business with us?`}</span>
-          <p className="text-xl font-medium">
+          <span className="inline-block max-w-6xl text-lg md:text-4xl lg:text-5xl font-bold font-pt">{`Are you ready to grow your business with us?`}</span>
+          <p className="text-sm md:text-xl font-medium">
             Contact us today and discover how we can help your business thrive.
           </p>
         </div>
-        <Button className="w-40 p-4">Contact Us</Button>
+        <Button className="w-32 md:w-40 md:p-4">Contact Us</Button>
 
         {/* Background glow */}
         <div

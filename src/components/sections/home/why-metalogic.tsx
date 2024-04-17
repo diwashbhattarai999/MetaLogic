@@ -38,7 +38,7 @@ const WhyMetalogic = () => {
         </div>
 
         {/* Content */}
-        <div className="border border-muted rounded-lg bg-background/10 backdrop-blur-md shadow-sm p-20 max-w-7xl">
+        <div className="md:border border-muted rounded-lg md:bg-background/10 backdrop-blur-md shadow-sm p-0 md:p-20 max-w-7xl">
           <h2 className="md:text-xl font-semibold text-center">
             Innovation is our driving force. We explore the latest tech trends
             to deliver groundbreaking solutions that keep you ahead.

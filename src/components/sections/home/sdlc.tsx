@@ -18,13 +18,16 @@ const SDLC = () => {
 
   useGSAP(
     () => {
+      const screenWidth = window.innerWidth;
+      const translateX = screenWidth <= 768 ? `-410vw` : `-245vw`;
+
       gsap.fromTo(
         stepsRef.current,
         {
           translateX: 0,
         },
         {
-          translateX: `-155vw`,
+          translateX,
           ease: "none",
           duration: 1,
           scrollTrigger: {
@@ -60,12 +63,12 @@ const SDLC = () => {
       {/* SDLC Steps */}
       <div
         ref={stepsRef}
-        className="flex gap-8 items-center justify-between relative w-[245vw] h-full"
+        className="flex gap-8 items-center justify-between relative w-[500vw] md:w-[245vw] h-full"
       >
         {SDLC_STEPS.map((step, i) => (
           <div
             key={i}
-            className="h-[32rem] w-[50vw] backdrop-blur-md text-primary rounded-lg bg-background border border-border/50 flex flex-col items-start justify-center px-6 py-16 md:py-10 gap-2 relative shadow-sm"
+            className="h-[24rem] md:h-[32rem] w-[100vw] md:w-[50vw] backdrop-blur-md text-primary rounded-lg bg-background border border-border/50 flex flex-col items-start justify-center px-6 py-16 md:py-10 gap-2 relative shadow-sm"
           >
             {/* Background glow */}
             <div

@@ -13,7 +13,7 @@ const ExploreOurProducts = () => {
     <section className="min-h-screen flex items-center flex-col gap-16 z-10 mt-16 md:mt-32">
       {/* Header */}
       <div
-        className="text-center flex flex-col items-center gap-4 text-secondary-foreground/90 -z-10"
+        className="text-center flex flex-col items-center gap-4 text-secondary-foreground/90 z-0 md:-z-10 -mb-20 md:mb-0"
         data-scroll
         data-scroll-speed="0.05"
       >
@@ -89,7 +89,7 @@ const ExploreOurProducts = () => {
             </div>
 
             {/* Right  Product Images */}
-            <div className="md:basis-[45%] h-full relative">
+            <div className="w-full md:basis-[45%] h-full relative">
               {product.images.map((image, index) => {
                 return (
                   <div key={index}>
@@ -105,7 +105,8 @@ const ExploreOurProducts = () => {
                         "absolute",
                         index == 0 && "top-0 left-0",
                         index == 1 && "top-0 right-0",
-                        index == 2 && "bottom-40 left-1/2"
+                        index == 2 &&
+                          "-bottom-40 md:bottom-60 lg:bottom-40 left-1/3 md:left-1/2"
                       )}
                       data-scroll
                       data-scroll-speed={index / 15}
@@ -119,7 +120,7 @@ const ExploreOurProducts = () => {
       })}
 
       {/* See All Button */}
-      <Link href={"/"} className="-mt-32 mb-16 z-40">
+      <Link href={"/"} className="mt-32 md:-mt-32 mb-16 z-40">
         <Button className="p-4 w-60" icon outline>
           See All Products
           <ArrowRight />

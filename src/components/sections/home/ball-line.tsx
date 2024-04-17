@@ -6,7 +6,7 @@ const BallLine = () => {
       viewBox="0 0 65 384"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="-mt-2"
+      className="-mt-2 max-lg:hidden"
     >
       <path
         id="dots"
